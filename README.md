@@ -2,7 +2,8 @@
 
 > Pequeño utilitario para crear polyzones para posteriormente poder utilizar con OxLib
 
-![image](https://github.com/user-attachments/assets/4b3beb8b-21c1-4470-828a-3ed8c75d50ab)
+![image](https://github.com/user-attachments/assets/f0774efd-bc78-4322-86da-dc536a4f8b23)
+
 
 <b>Comando:</b>  `/createzone`
 
