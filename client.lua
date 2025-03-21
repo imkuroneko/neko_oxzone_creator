@@ -5,8 +5,6 @@ local targetPoint = nil
 
 local config = {
     controls = {
-        lookLeft = 34,     -- A
-        lookRight = 35,    -- D
         lookUp = 32,       -- W
         lookDown = 33,     -- S
 
@@ -98,9 +96,9 @@ function StartPointSelection()
     SetPlayerControl(PlayerId(), false, 0)
 
     lib.showTextUI(
-        "[WASD] Mover cámara  \n" ..
+        "[W/S] Avanzar/Retroceder  \n" ..
         "[Q/E] Subir/Bajar  \n" ..
-        "[Mouse] Rotar vista  \n" ..
+        "[Mouse] Rotar cámara  \n" ..
         "[Shift] Aumentar velocidad  \n" ..
         "[Alt] Reducir velocidad  \n" ..
         "[ESPACIO] Marcar punto  \n" ..
@@ -283,13 +281,20 @@ function StopPointSelection()
         return
     end
 
-    local formattedPoints = {}
+    local lowestZ = points[1].z
     for _, point in ipairs(points) do
-        table.insert(formattedPoints, vec3(point.x, point.y, point.z))
+        if point.z < lowestZ then
+            lowestZ = point.z
+        end
     end
 
-    print('Puntos for ox_lib zone:')
-    print('coords = {')
+    local formattedPoints = {}
+    for _, point in ipairs(points) do
+        table.insert(formattedPoints, vec3(point.x, point.y, lowestZ))
+    end
+
+    print('Points for ox_lib zone:')
+    print('points = {')
     for _, point in ipairs(formattedPoints) do
         print(string.format('    vec3(%.2f, %.2f, %.2f),', point.x, point.y, point.z))
     end
