@@ -5,9 +5,6 @@ local targetPoint = nil
 
 local config = {
     controls = {
-        lookUp = 32,       -- W
-        lookDown = 33,     -- S
-
         rollLeft = 45,     -- R
         rollRight = 23,    -- F
 
@@ -16,8 +13,6 @@ local config = {
 
         moveForward = 32,  -- W
         moveBack = 33,     -- S
-        moveLeft = 34,     -- A
-        moveRight = 35,    -- D
         moveUp = 44,       -- Q
         moveDown = 38,     -- E
 
